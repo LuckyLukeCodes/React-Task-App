@@ -8,7 +8,7 @@ const ContainerCard = () => {
   const menuState = useSelector((state) => state.menu);
 
   return (
-    <div className="flex h-[55rem] w-[35rem] flex-col rounded-3xl bg-[var(--secondary-color)] shadow-lg shadow-blue-100">
+    <div className="flex h-[60rem] w-[35rem] flex-col rounded-3xl bg-[var(--secondary-color)] shadow-2xl shadow-blue-500/20">
       {menuState.listBtnClicked && <Lists />}
       {menuState.addBtnClicked && <AddTask />}
       {menuState.chartBtnClicked && <Chart />}

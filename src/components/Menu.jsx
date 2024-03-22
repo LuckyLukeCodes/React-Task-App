@@ -21,7 +21,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="absolute bottom-[102px] z-10 flex h-24 w-[35rem] items-center justify-evenly rounded-bl-3xl rounded-br-3xl border-t-2 border-slate-200 bg-white">
+    <div className="absolute bottom-[52px] z-10 flex h-24 w-[35rem] items-center justify-evenly rounded-bl-3xl rounded-br-3xl border-t-2 border-slate-200 bg-white shadow-[0px_-8px_40px_0px_#e2e8f0]">
       <MenuButton
         text="list"
         icon={<VscChecklist />}

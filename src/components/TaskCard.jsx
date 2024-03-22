@@ -5,6 +5,9 @@ import { FaRegCircle, FaRegCheckCircle } from "react-icons/fa";
 const TaskCard = ({ id, task, category, date, isComplete }) => {
   const dispatch = useDispatch();
   const handleClick = (event) => {
+    var formattedDate = new Date(date);
+    var day = formattedDate.toLocaleString("default", { weekday: "short" });
+
     dispatch(
       taskActions.taskComplete({
         id,
@@ -14,16 +17,18 @@ const TaskCard = ({ id, task, category, date, isComplete }) => {
         isComplete,
       }),
     );
+
+    dispatch(taskActions.incrementDaysTotal());
   };
 
   let taskColor = "";
 
   switch (category) {
     case "personal":
-      taskColor = "text-[#D4145A]";
+      taskColor = "text-[#662D8C]";
       break;
     case "business":
-      taskColor = "text-[#662D8C]";
+      taskColor = "text-[#D4145A]";
       break;
     default:
       taskColor = "text-[#FF61D2]";

@@ -1,4 +1,3 @@
-import React from "react";
 import CategoryCard from "./CategoryCard";
 import { useSelector } from "react-redux";
 
@@ -6,7 +5,9 @@ const CategoryList = ({ listTitle }) => {
   const totals = useSelector((state) => state.task.totals);
   return (
     <>
-      <h6 className="px-6 py-3 text-base">{listTitle}</h6>
+      <h6 className="px-6 py-3 text-base font-semibold tracking-wide">
+        {listTitle}
+      </h6>
       <div className="no-scrollbar overflow-x-auto">
         <div className="no-scrollbar flex h-28 w-[300%] max-w-screen-md gap-4 overflow-scroll overflow-x-auto px-6">
           <CategoryCard

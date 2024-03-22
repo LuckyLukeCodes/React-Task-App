@@ -10,6 +10,17 @@ const taskSlice = createSlice({
       totalBusiness: 0,
       totalOther: 0,
     },
+    monthlyTaskTotals: {},
+    dailyTaskTotals: {
+      mon: 0,
+      tue: 0,
+      wed: 0,
+      thu: 0,
+      fri: 0,
+      sat: 0,
+      sun: 0,
+    },
+    dailyTotal: 0,
   },
   reducers: {
     addTask(state, action) {
@@ -72,24 +83,37 @@ const taskSlice = createSlice({
           date: taskItem.date,
           isComplete: true,
         });
-
-        switch (taskItem.category) {
-          case "personal":
-            state.totals.totalPersonal++;
-            break;
-          case "business":
-            state.totals.totalBusiness++;
-            break;
-          default:
-            state.totals.totalOther++;
-        }
       }
     },
-    markTaskComplete(state, action) {
+    incrementDailyTotals(state, action) {
       const taskItem = action.payload;
-      let objIndex = state.items.findIndex((obj) => obj.id == taskItem.id);
-      //   const existingItem = state.items.find((item) => item.id === taskItem.id);
-      //might want to check for empty list.
+      console.log(taskItem);
+      switch (taskItem) {
+        case "mon":
+          state.dailyTaskTotals.mon++;
+          break;
+        case "tues":
+          state.dailyTaskTotals.tue++;
+          break;
+        case "wed":
+          state.dailyTaskTotals.wed++;
+          break;
+        case "thu":
+          state.dailyTaskTotals.thu++;
+          break;
+        case "fri":
+          state.dailyTaskTotals.fri++;
+          break;
+        case "sat":
+          state.dailyTaskTotals.sat++;
+          break;
+        case "sun":
+          state.dailyTaskTotals.sun++;
+          break;
+      }
+    },
+    incrementDaysTotal(state, action) {
+      state.dailyTotal++;
     },
   },
 });

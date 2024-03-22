@@ -1,5 +1,4 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import CircleProgress from "./CircleProgress";
 
 const CategoryCard = ({ title, color1, color2, shadow, numberOfTaskLeft }) => {
   return (
@@ -8,6 +7,7 @@ const CategoryCard = ({ title, color1, color2, shadow, numberOfTaskLeft }) => {
     >
       <h2 className="text-2xl font-semibold capitalize">{title}</h2>
       <h4 className="text-xs">{numberOfTaskLeft} task left</h4>
+      {/* <CircleProgress /> */}
     </div>
   );
 };
